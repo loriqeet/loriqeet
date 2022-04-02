@@ -1,0 +1,44 @@
+{
+  "name": "loriqeet",
+  "version": "0.0.1",
+  "description": "Dynamic custom images for social media sharing",
+  "keywords": [
+    "loriqeet",
+    "dynamic",
+    "custom",
+    "images",
+    "image",
+    "social",
+    "media",
+    "share",
+    "open",
+    "graph",
+    "og",
+    "facebook",
+    "twitter",
+    "card",
+    "template",
+    "puppeteer",
+    "handlebars"
+  ],
+  "homepage": "https://github.com/loriqeet/loriqeet#readme",
+  "bugs": {
+    "url": "https://github.com/loriqeet/loriqeet/issues"
+  },
+  "license": "MIT",
+  "author": "Robert Love <robert@loriqeet.com> (https://loriqeet.com)",
+  "main": "index.js",
+  "bin": {
+    "loriqeet": "index.js"
+  },
+  "repository": "github:loriqeet/loriqeet",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "commander": "^9.1.0",
+    "handlebars": "^4.7.7",
+    "js-yaml": "^4.1.0",
+    "puppeteer": "^13.5.1"
+  }
+}
