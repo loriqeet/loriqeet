@@ -51,27 +51,23 @@ touch loriqeet.template.html
 Copy the following code into `loriqeet.config.yaml` and save the file:
 
 ```yaml
-template: "./loriqeet.template.html"
-width: 1200
-height: 630
-images:
-  - path: "./images/everything-you-ever-wanted-to-know-about-loriqeet.png"
-    title: "Everything You Ever Wanted to Know About Loriqeet"
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas nec dolor id eros pulvinar euismod ac et mi curabitur efficitur imperdiet urna varius consequat."
-  - path: "./images/15-amazing-facts-about-loriqeet.jpeg"
-    title: "15 Amazing Facts About Loriqeet"
-    description: "Vestibulum facilisis tempor velit ut tincidunt arcu vehicula et in et vulputate dolor quisque elementum urna at viverra commodo ante tortor aliquam augue fermentum."
-  - path: "./images/what-research-says-about-loriqeet.jpg"
-    title: "What Research Says About Loriqeet"
-    description: "Maecenas id cursus nisl morbi libero felis finibus et odio et ultrices dapibus purus duis scelerisque orci ut lorem bibendum et accumsan magna sodales fusce."
-  - path: "./images/this-is-your-brain-on-loriqeet.webp"
-    width: 500
-    height: 500
-    title: "This Is Your Brain on Loriqeet 🧠"
-    description: "Nulla accumsan ut metus at rutrum etiam eu iaculis neque non finibus orci morbi sollicitudin accumsan ipsum nam pharetra tellus ac diam lobortis."
-  - path: "./images/everything-you-need-to-know-about-loriqeet.png"
-    title: "Everything You Need to Know About Loriqeet"
-    description: "Mauris semper at mauris egestas accumsan donec in sagittis odio vivamus quis fermentum neque praesent in ante pharetra congue nunc non egestas felis."
+- path: "./images/everything-you-ever-wanted-to-know-about-loriqeet.png"
+  title: "Everything You Ever Wanted to Know About Loriqeet"
+  description: "Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas nec dolor id eros pulvinar euismod ac et mi curabitur efficitur imperdiet urna varius consequat."
+- path: "./images/15-amazing-facts-about-loriqeet.jpeg"
+  title: "15 Amazing Facts About Loriqeet"
+  description: "Vestibulum facilisis tempor velit ut tincidunt arcu vehicula et in et vulputate dolor quisque elementum urna at viverra commodo ante tortor aliquam augue fermentum."
+- path: "./images/what-research-says-about-loriqeet.jpg"
+  title: "What Research Says About Loriqeet"
+  description: "Maecenas id cursus nisl morbi libero felis finibus et odio et ultrices dapibus purus duis scelerisque orci ut lorem bibendum et accumsan magna sodales fusce."
+- path: "./images/this-is-your-brain-on-loriqeet.webp"
+  width: 500
+  height: 500
+  title: "This Is Your Brain on Loriqeet 🧠"
+  description: "Nulla accumsan ut metus at rutrum etiam eu iaculis neque non finibus orci morbi sollicitudin accumsan ipsum nam pharetra tellus ac diam lobortis."
+- path: "./images/everything-you-need-to-know-about-loriqeet.png"
+  title: "Everything You Need to Know About Loriqeet"
+  description: "Mauris semper at mauris egestas accumsan donec in sagittis odio vivamus quis fermentum neque praesent in ante pharetra congue nunc non egestas felis."
 ```
 
 ### 3. Create your template
@@ -115,7 +111,7 @@ Copy the following code into `loriqeet.template.html` and save the file:
 ### 4. Run Loriqeet
 
 ```
-loriqeet --config ./loriqeet.config.yaml --verbose
+loriqeet
 ```
 
 ### 5. Check out your images
