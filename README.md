@@ -8,14 +8,30 @@ Loriqeet is simple to configure and can be easily integrated into any project an
 
 ## Installation
 
+Install Loriqeet globally:
+
 ```
 npm i -g loriqeet
 ```
 
 ## Usage
 
+Type `loriqeet --help` to see all available usage options:
+
 ```
-loriqeet --config ./loriqeet.config.yaml
+Usage: loriqeet [options]
+
+Dynamic custom images for social media sharing
+
+Options:
+  -V, --version          output the version number
+  -c, --config <path>    path to the configuration file (default: "./loriqeet.config.yaml")
+  -t, --template <path>  path to the template file (default: "./loriqeet.template.html")
+  -w, --width <number>   image width (default: 1200)
+  -h, --height <number>  image height (default: 630)
+  -v, --verbose          display verbose output (default: false)
+  -d, --debug            run in debug mode (default: false)
+  -H, --help             display help for command
 ```
 
 ## Quick Start
@@ -27,7 +43,7 @@ mkdir loriqeet-quickstart
 cd loriqeet-quickstart
 mkdir images
 touch loriqeet.config.yaml
-touch template.html
+touch loriqeet.template.html
 ```
 
 ### 2. Create your config
@@ -35,7 +51,7 @@ touch template.html
 Copy the following code into `loriqeet.config.yaml` and save the file:
 
 ```yaml
-template: "./template.html"
+template: "./loriqeet.template.html"
 width: 1200
 height: 630
 images:
@@ -60,7 +76,7 @@ images:
 
 ### 3. Create your template
 
-Copy the following code into `template.html` and save the file:
+Copy the following code into `loriqeet.template.html` and save the file:
 
 ```html
 <!doctype html>
