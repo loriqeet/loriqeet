@@ -1,6 +1,6 @@
 {
   "name": "loriqeet",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Dynamic custom images for social media sharing",
   "keywords": [
     "custom",
@@ -12,6 +12,7 @@
     "image-processing",
     "instagram",
     "linkedin",
+    "loriqeet",
     "open-graph-protocol",
     "puppeteer",
     "share",
@@ -27,9 +28,9 @@
   },
   "license": "MIT",
   "author": "Robert Love <robert@loriqeet.com> (https://loriqeet.com)",
-  "main": "index.js",
+  "main": "./index.js",
   "bin": {
-    "loriqeet": "index.js"
+    "loriqeet": "./index.js"
   },
   "repository": "github:loriqeet/loriqeet",
   "scripts": {
@@ -39,6 +40,6 @@
     "commander": "^9.1.0",
     "handlebars": "^4.7.7",
     "js-yaml": "^4.1.0",
-    "puppeteer": "^13.5.1"
+    "puppeteer": "^13.5.2"
   }
 }
