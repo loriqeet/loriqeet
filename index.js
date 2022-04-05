@@ -24,8 +24,20 @@ program
 
 const options = program.opts();
 
-let buffer = fs.readFileSync(options.config);
+if (options.debug) {
+  console.log('Options:', options);
+}
+
+var buffer = fs.readFileSync(options.config);
 const config = yaml.load(buffer);
+
+if (options.debug) {
+  console.log('Config:', config);
+}
+
+var buffer = fs.readFileSync(options.template);
+let string = buffer.toString();
+const template = handlebars.compile(string);
 
 (async () => {
 
@@ -39,40 +51,31 @@ const config = yaml.load(buffer);
 
   let count = 1;
 
-  for (let i in config) {
-
-    let image = {
-      ...options,
-      ...config[i]
-    };
-
-    if (options.debug) {
-      console.log(`Image ${count} of ${config.length}:`, image);
-    }
+  for (let data of config) {
 
     if (options.verbose) {
-      console.log(`Saving image ${count} of ${config.length}:`, image.path);
+      console.log(`Saving image ${count} of ${config.length}:`, data.path);
     }
 
     if (!options.debug) {
 
       await page.setViewport({
-        width: image.width,
-        height: image.height,
+        width: options.width,
+        height: options.height,
         deviceScaleFactor: 1
       });
 
-      let buffer = fs.readFileSync(image.template);
-      let string = buffer.toString();
-      let template = handlebars.compile(string);
-      let html = template(image);
+      let html = template(data);
+
+      let waitUntil = (count == 1) ? 'networkidle0' : 'load';
+      //let waitUntil = 'load';
 
       await page.setContent(html, {
-        waitUntil: 'networkidle0'
+        waitUntil: waitUntil
       });
 
       await page.screenshot({
-        path: image.path
+        path: data.path
       });
 
     }
