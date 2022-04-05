@@ -24,14 +24,16 @@ Usage: loriqeet [options]
 Dynamic custom images for social media sharing
 
 Options:
-  -V, --version          output the version number
-  -c, --config <path>    path to the configuration file (default: "./loriqeet.config.yaml")
-  -t, --template <path>  path to the template file (default: "./loriqeet.template.html")
-  -w, --width <number>   image width (default: 1200)
-  -h, --height <number>  image height (default: 630)
-  -v, --verbose          display verbose output (default: false)
-  -d, --debug            run in debug mode (default: false)
-  -H, --help             display help for command
+  -V, --version           output the version number
+  -c, --config <path>     path to the configuration file (default: "./loriqeet.config.yaml")
+  -t, --template <path>   path to the template file (default: "./loriqeet.template.html")
+  -w, --width <number>    image width (default: 1200)
+  -h, --height <number>   image height (default: 630)
+  -q, --quality <number>  image quality between 0-100 (not applicable to PNG images) (default: 100)
+  --no-background         allow transparent background (not applicable to JPEG images)
+  -v, --verbose           display verbose output (default: false)
+  -d, --debug             run in debug mode (default: false)
+  -H, --help              display help for command
 ```
 
 ## Quick Start
