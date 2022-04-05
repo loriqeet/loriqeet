@@ -4,9 +4,11 @@ const start = Date.now();
 
 const fs = require('fs');
 const handlebars = require('handlebars');
-const yaml = require('js-yaml');
+const path = require('path');
 const program = require('commander');
 const puppeteer = require('puppeteer');
+const yaml = require('js-yaml');
+
 const package = require('./package.json');
 
 program
@@ -18,21 +20,21 @@ program
   .requiredOption('-t, --template <path>', 'path to the template file', './loriqeet.template.html')
   .requiredOption('-w, --width <number>', 'image width', Number, 1200)
   .requiredOption('-h, --height <number>', 'image height', Number, 630)
+  .requiredOption('-q, --quality <number>', 'image quality between 0-100 (not applicable to PNG images)', Number, 100)
+  .requiredOption('--no-background', 'allow transparent background (not applicable to JPEG images)')
   .requiredOption('-v, --verbose', 'display verbose output', false)
   .requiredOption('-d, --debug', 'run in debug mode', false)
   .parse();
 
 const options = program.opts();
 
-if (options.debug) {
-  console.log('Options:', options);
-}
-
 var buffer = fs.readFileSync(options.config);
 const config = yaml.load(buffer);
 
 if (options.debug) {
+  console.log('Options:', options);
   console.log('Config:', config);
+  process.exit(1);
 }
 
 var buffer = fs.readFileSync(options.template);
@@ -57,28 +59,30 @@ const template = handlebars.compile(string);
       console.log(`Saving image ${count} of ${config.length}:`, data.path);
     }
 
-    if (!options.debug) {
+    await page.setViewport({
+      width: options.width,
+      height: options.height,
+      deviceScaleFactor: 1
+    });
 
-      await page.setViewport({
-        width: options.width,
-        height: options.height,
-        deviceScaleFactor: 1
-      });
+    let html = template(data);
 
-      let html = template(data);
+    let waitUntil = (count == 1) ? 'networkidle0' : 'load';
 
-      let waitUntil = (count == 1) ? 'networkidle0' : 'load';
-      //let waitUntil = 'load';
+    await page.setContent(html, {
+      waitUntil: waitUntil
+    });
 
-      await page.setContent(html, {
-        waitUntil: waitUntil
-      });
+    let screenshotOptions = {
+      path: data.path,
+      omitBackground: !options.background
+    };
 
-      await page.screenshot({
-        path: data.path
-      });
-
+    if (path.extname(data.path).toLowerCase() !== '.png') {
+      screenshotOptions.quality = options.quality
     }
+
+    await page.screenshot(screenshotOptions);
 
     count++;
 
