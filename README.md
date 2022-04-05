@@ -61,8 +61,6 @@ Copy the following code into `loriqeet.config.yaml` and save the file:
   title: "What Research Says About Loriqeet"
   description: "Maecenas id cursus nisl morbi libero felis finibus et odio et ultrices dapibus purus duis scelerisque orci ut lorem bibendum et accumsan magna sodales fusce."
 - path: "./images/this-is-your-brain-on-loriqeet.webp"
-  width: 500
-  height: 500
   title: "This Is Your Brain on Loriqeet 🧠"
   description: "Nulla accumsan ut metus at rutrum etiam eu iaculis neque non finibus orci morbi sollicitudin accumsan ipsum nam pharetra tellus ac diam lobortis."
 - path: "./images/everything-you-need-to-know-about-loriqeet.png"
