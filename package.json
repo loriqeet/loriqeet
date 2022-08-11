@@ -28,7 +28,11 @@
     "url": "https://github.com/loriqeet/loriqeet/issues"
   },
   "license": "MIT",
-  "author": "Robert Love <robert@loriqeet.com> (https://loriqeet.com)",
+  "author": {
+    "name": "Robert Love",
+    "email": "robert@loriqeet.com",
+    "url": "https://loriqeet.com"
+  },
   "main": "./index.js",
   "bin": {
     "loriqeet": "./index.js"
@@ -41,6 +45,6 @@
     "commander": "^9.4.0",
     "handlebars": "^4.7.7",
     "js-yaml": "^4.1.0",
-    "puppeteer": "^15.4.0"
+    "puppeteer": "^16.1.0"
   }
 }
