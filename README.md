@@ -18,7 +18,7 @@ npm i -g loriqeet
 
 Type `loriqeet --help` to see all available usage options:
 
-```shell
+```
 Usage: loriqeet [options]
 
 Dynamic custom images for social media sharing
