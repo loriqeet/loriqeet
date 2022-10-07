@@ -42,9 +42,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "commander": "^9.4.0",
+    "commander": "^9.4.1",
     "handlebars": "^4.7.7",
     "js-yaml": "^4.1.0",
-    "puppeteer": "^17.1.0"
+    "puppeteer": "^18.2.1"
   }
 }
