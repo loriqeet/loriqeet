@@ -10,7 +10,7 @@ Loriqeet is simple to configure and can be easily integrated into any project an
 
 Install Loriqeet globally:
 
-```
+```shell
 npm i -g loriqeet
 ```
 
@@ -18,7 +18,7 @@ npm i -g loriqeet
 
 Type `loriqeet --help` to see all available usage options:
 
-```
+```shell
 Usage: loriqeet [options]
 
 Dynamic custom images for social media sharing
@@ -40,7 +40,7 @@ Options:
 
 ### 1. Set up the quick start folder
 
-```
+```shell
 mkdir loriqeet-quickstart
 cd loriqeet-quickstart
 mkdir images
@@ -110,7 +110,7 @@ Copy the following code into `loriqeet.template.html` and save the file:
 
 ### 4. Run Loriqeet
 
-```
+```shell
 loriqeet
 ```
 
