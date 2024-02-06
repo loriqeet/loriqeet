@@ -5,7 +5,7 @@ const start = Date.now();
 const fs = require('fs');
 const handlebars = require('handlebars');
 const path = require('path');
-const program = require('commander');
+const { program } = require('commander');
 const puppeteer = require('puppeteer');
 const yaml = require('js-yaml');
 
@@ -23,8 +23,9 @@ program
   .requiredOption('-q, --quality <number>', 'image quality between 0-100 (not applicable to PNG images)', Number, 100)
   .requiredOption('--no-background', 'allow transparent background (not applicable to JPEG images)')
   .requiredOption('-v, --verbose', 'display verbose output', false)
-  .requiredOption('-d, --debug', 'run in debug mode', false)
-  .parse();
+  .requiredOption('-d, --debug', 'run in debug mode', false);
+
+program.parse();
 
 const options = program.opts();
 
