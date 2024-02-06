@@ -1,6 +1,6 @@
 {
   "name": "loriqeet",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Dynamic custom images for social media sharing",
   "keywords": [
     "custom",
@@ -34,9 +34,12 @@
   },
   "main": "./index.js",
   "bin": {
-    "loriqeet": "./index.js"
+    "loriqeet": "index.js"
   },
-  "repository": "github:loriqeet/loriqeet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loriqeet/loriqeet.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
